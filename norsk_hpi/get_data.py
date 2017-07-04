@@ -35,12 +35,12 @@ def download_file(skip_this=False):
 
     if not skip_this:
 
-        if not os.path.isdir("baseballdatabank-2017.1"):
+        if not os.path.isfile("house_price_index.csv"):
 
             print("Starting download")
             # Get baseball data in csv form from website
-            url = "http://data.ssb.no/api/v0/dataset/1060.json?lang=en"
-            request.urlretrieve(url, filename="house_price_index.json", reporthook=download_progress_hook)
+            url = "http://data.ssb.no/api/v0/dataset/1060.csv?lang=en"
+            request.urlretrieve(url, filename="house_price_index.csv", reporthook=download_progress_hook)
 
             print("Data downloaded and unzipped")
             print("Data licensed under Norwegian Licence for Open Government Data (NLOD).")
